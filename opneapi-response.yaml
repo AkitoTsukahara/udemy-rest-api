@@ -1,0 +1,28 @@
+openapi: "3.0.3"
+
+info:
+  title: "sample api"
+  version: "1.0.0"
+    
+paths: 
+  "/shops/{shopId}/reviews":
+    post:
+      summary: "Create reviews"
+      parameters:
+      - name: shopId
+        in: path
+        required: true
+        schema: { type: string }
+      requestBody:
+        description: "Contents of review"
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                score: { type: integer, example: 100}
+                comment: { type: string, example: "sample"}
+      responses:
+        "201":
+          description: "Success operation"
