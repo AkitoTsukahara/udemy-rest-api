@@ -1,0 +1,21 @@
+openapi: "3.0.3"
+
+info:
+  title: "sample api"
+  version: "1.0.0"
+
+servers:
+  - url: "https://localhost:{post}"
+    description: "Local development"
+    variables:
+      port:
+        enum: ["3000", "8000"]
+        default: "3000"
+  - url: "https://it1.kokoko.com"
+    description: "Integration Test"
+  - url: "https://stg.kokoko.com"
+    description: "Staging"
+  - url: "https://api.kokoko.com"
+    description: "Production"
+    
+paths: {}
